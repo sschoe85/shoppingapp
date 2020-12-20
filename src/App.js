@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App({ setCurrentUser, ...props }) {
   useEffect(() => {
@@ -39,6 +40,7 @@ function App({ setCurrentUser, ...props }) {
           path="/signin"
           render={() => (props.currentUser ? <Redirect to="/" /> : <SignInPage />)}
         />
+        <Route path = "/checkout" component={CheckoutPage}/>
       </Switch>
     </>
   );
