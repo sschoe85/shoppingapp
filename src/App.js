@@ -38,14 +38,16 @@ function App({ setCurrentUser, ...props }) {
         <Route
           exact
           path="/signin"
-          render={() => (props.currentUser ? <Redirect to="/" /> : <SignInPage />)}
+          render={() =>
+            props.currentUser ? <Redirect to="/" /> : <SignInPage />
+          }
         />
-        <Route path = "/checkout" component={CheckoutPage}/>
+        <Route path="/checkout" component={CheckoutPage} />
       </Switch>
     </>
   );
 }
-const mapStateToProps = createStructuredSelector ({
+const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 });
 

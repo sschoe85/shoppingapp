@@ -8,7 +8,7 @@ import { createStructuredSelector } from "reselect";
 
 function CartIcon(props) {
   return (
-    <div className="cart-icon" onClick = {props.toggleCartHidden}>
+    <div className="cart-icon" onClick={props.toggleCartHidden}>
       <ShoppingIcon />
       <span className="item-count">{props.itemCount}</span>
     </div>
@@ -16,11 +16,11 @@ function CartIcon(props) {
 }
 
 const mapStateToProps = createStructuredSelector({
-  itemCount: selectCartItemsCount
+  itemCount: selectCartItemsCount,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleCartHidden: () => dispatch(toggleCartHidden())
+  toggleCartHidden: () => dispatch(toggleCartHidden()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
